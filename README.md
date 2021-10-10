@@ -6,7 +6,8 @@ A posteriori, s' afegiran funcionalitats específiques (p.e. reproducció en 2n 
 Oferir funcionalitats addicionals no incloses en a **YouTube/YouTube Music**.
 
 ## Estat del projecte
-Fase Inicial: Planificació del projecte 
+- 2: [S9N01Ex01: Base del Projecte (<initialCommit>)](#crear-la-base-del-projecte)
+- 1: [Fase Inicial: Planificació del projecte](#definició-de-la-arquitectura-de-la-aplicació)
 
 [![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://github.com/marsalxavi)
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://github.com/marsalxavi)
