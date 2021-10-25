@@ -1,8 +1,10 @@
+/* PAGINA */
 .page {
     display: flex;
     flex-direction: column;
 }
 
+/* CAP */
 .cap {
   display: flex;
   align-items: center;
@@ -12,7 +14,7 @@
   position: sticky;
   top:0;
   z-index: 100;
-  background-color: lightsteelblue;
+  background-color:limegreen;
 }
 .capEsquerra {
   display: flex;
@@ -51,4 +53,44 @@
   align-items: center;
   object-fit: contain;
   margin-right: 1em;
+}
+
+/* LinkList */
+.videoFrame {
+  display: flex;
+  flex-direction: row;
+}
+.videoDetail {
+  flex: 0.75;
+  border: 1px solid black;
+}
+
+.videoList {
+  flex: 0.25;
+  border: 1px solid black
+}
+
+.videoListLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.videoListThumb img {
+  height: 5em;
+}
+
+.videoListItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: .2em;
+}
+
+.videoListThumb {
+  /* padding: 1em; */
+}
+
+.videoListDesc {
+  margin-left: 1em;
 }

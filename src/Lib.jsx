@@ -1,3 +1,5 @@
+import { ClassNames } from "@emotion/react";
+import { CodeSharp } from "@mui/icons-material";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -13,13 +15,31 @@ export const YtSearch = async (qq, { setLlistaVideos }) => {
 };
 
 export const LinkList = ({ VideosPerLlistar }) => {
+  const checkBestThumb = (item) => {
+    if ("bestThumbnail" in item) {
+      return true;
+    } else {
+      console.log("no bestThumbnail", item.title);
+      return false;
+    }
+  };
+
   return (
     <ol>
       {VideosPerLlistar.map((item, index) => {
         return (
           <>
-            <li>
-              <a href={item.url}>{item.title}></a>
+            <li className="videoListLine">
+              {checkBestThumb(item) && (
+                <div className="videoListItem">
+                  <div className="videoListThumb">
+                    <img src={item.bestThumbnail.url} />
+                  </div>
+                  <div className="videoListDesc">
+                    <a href={item.url}>{item.title}</a>
+                  </div>
+                </div>
+              )}
             </li>
           </>
         );

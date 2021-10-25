@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# x1tub
+Clon de la web de **YouTube/YouTube Music**.
+A posteriori, s' afegiran funcionalitats específiques (p.e. reproducció en 2n pla).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Propòsit
+Oferir funcionalitats addicionals no incloses en a **YouTube/YouTube Music**.
 
-## Available Scripts
+## Estat del projecte
+- 4: [S9N01Ex05](#component-videoDetail)
+- 3: [S9N01Ex02-04: App, searchBar & videoList Components](#component-videoList)
+- 2: [S9N01Ex01: Base del Projecte (<initialCommit>)](#crear-la-base-del-projecte)
+- 1: [Fase Inicial: Planificació del projecte](#definició-de-la-arquitectura-de-la-aplicació)
 
-In the project directory, you can run:
+[![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://github.com/marsalxavi)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://github.com/marsalxavi)
 
-### `npm start`
+## Estil del codi
+Estil standar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+ 
+## Captures de pantalla
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![link](x1tub/src/images/x1tub.png)
 
-### `npm test`
+## Tecnologies/Framework
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<b>Desenvolupat amb</b>
+- [React](https://reactjs.org)
+- [node-ytsr](https://www.npmjs.com/package/ytsr?activeTab=readme)
+- [React-Hook-Forms](https://www.npmjs.com/package/react-hook-form)
 
-### `npm run build`
+## Característiques
+Funcionalitats addicionals no incloses en la web/app oficial
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Desenvolupament: Fases del Projecte
+### Fase I
+#### Definició de la arquitectura de la aplicació
+- Disseny de la pantalla per PC
+- Components necessaris
+- Vinculació entre els seus components
+#### Crear la base del projecte
+- Creació del projecte
+- Instal·lació paquets i llibreries addicionals(Axios, UI,...)
+#### Component App
+- Components, mètodes, states,..
+- Proves carrega vídeos API YouTube
+- Proves cerca vídeos
+#### Component SearchBar
+- Disseny barra cerques. retorn del llistat de vídeos
+#### Component VideoList
+- Mostra el llistat de vídeos
+#### Component VideoItem
+- Mostra el vídeo seleccionat
+#### Component VideoDetail
+- Mostra el detall del vídeo seleccionat
+### Fase II
+#### Funcionalitats addicionals
+- Videos recomanats
+- Historial de vídeos
+- Menú lateral
+- Favorits
+#### Navegació
+- Mapa del site
+### Fase III
+#### Pantalla Vídeos
+- Descomposició en llistat de vídeos i detall del vídeo
+#### Pantalla Principal
+- Disseny d' un Dashboard amb accés a tots els components:
+- - Llistat de vídeos
+- - Historial
+- - Favorits
+- - ...
+### Fase IV
+#### Definició de la arquitectura de la aplicació
+- Disseny de la pantalla per mòbil (responsive)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Instal·lació
+TBD
+## Referencia de les API
+TBD
+## Tests
+TBD
+## Com fer servir?
+TBD
+## Contribucions
+TBD
+## Crèdits
+TBD
+#### Annexos
+TBD
+## Llicència
+XMS © [xms]()

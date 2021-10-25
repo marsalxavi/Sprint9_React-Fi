@@ -29,7 +29,7 @@ export const Cap = () => {
         <div className="capEsquerra">
           <MenuIcon />
           <img className="capLogo" src={YouTubeLogo} />
-          <h4>·  x1tub</h4>
+          <h4>· x1tub</h4>
         </div>
         <div className="capInput">
           {/* <input type="text" /> */}
@@ -41,8 +41,13 @@ export const Cap = () => {
           <Avatar />
         </div>
       </div>
-      <div className="videoList">
-        <Lib.LinkList VideosPerLlistar={LlistaVideos} />
+      <div className="videoFrame">
+        <div className="videoDetail">
+          <p>Detall Video</p>
+        </div>
+        <div className="videoList">
+          <Lib.LinkList VideosPerLlistar={LlistaVideos} />
+        </div>
       </div>
     </div>
   );
