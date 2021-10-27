@@ -1,25 +1,24 @@
 import { ClassNames } from "@emotion/react";
 import { CodeSharp } from "@mui/icons-material";
-import React from "react";
-import { useForm } from "react-hook-form";
 
-// import { YtSearch } from "./YtSearch.jsx";
+import React, { Fragment, useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const ytsr = require("ytsr");
 export const YtSearch = async (qq, { setLlistaVideos }) => {
-  // console.log("YtSearch: ", qq);
   const firstResultBatch = await ytsr(`${qq}`, { pages: 1 });
 
   setLlistaVideos(firstResultBatch.items);
   return firstResultBatch;
 };
 
-export const LinkList = ({ VideosPerLlistar }) => {
+export const LinkList = ({ VideosPerLlistar, clickedVideoID }) => {
   const checkBestThumb = (item) => {
     if ("bestThumbnail" in item) {
       return true;
     } else {
-      console.log("no bestThumbnail", item.title);
+      // console.log("no bestThumbnail", item.title);
       return false;
     }
   };
@@ -36,7 +35,16 @@ export const LinkList = ({ VideosPerLlistar }) => {
                     <img src={item.bestThumbnail.url} />
                   </div>
                   <div className="videoListDesc">
-                    <a href={item.url}>{item.title}</a>
+                    <p
+                      onClick={() => {
+                        clickedVideoID(item.id);
+                      }}
+                    >
+                      {item.url}
+                    </p>
+
+                    {/* <Link to={`/video/${item.id}`}>{item.title}</Link> */}
+                    {/* <a href={item.url}>{item.title}</a> */}
                   </div>
                 </div>
               )}
