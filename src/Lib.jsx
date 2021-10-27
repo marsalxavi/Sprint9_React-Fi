@@ -5,7 +5,10 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
+import "./Lib.css";
+
 const ytsr = require("ytsr");
+
 export const YtSearch = async (qq, { setLlistaVideos }) => {
   const firstResultBatch = await ytsr(`${qq}`, { pages: 1 });
 
@@ -37,10 +40,14 @@ export const LinkList = ({ VideosPerLlistar, clickedVideoID }) => {
                   <div className="videoListDesc">
                     <p
                       onClick={() => {
-                        clickedVideoID(item.id);
+                        clickedVideoID({
+                          dni: item.id,
+                          titol: item.title,
+                          autor: item.author.name,
+                        });
                       }}
                     >
-                      {item.url}
+                      {item.title}
                     </p>
 
                     {/* <Link to={`/video/${item.id}`}>{item.title}</Link> */}
@@ -58,14 +65,14 @@ export const LinkList = ({ VideosPerLlistar, clickedVideoID }) => {
 
 export const OnChange = ({ query, setQuery }) => {
   return (
-    <form>
+    <form className="searchForm">
       <input
         onChange={(e) => setQuery(e.target.value == "" ? " " : e.target.value)}
         name="nom"
         type="text"
         value={query}
       />
-      <input name="searchOnChange" type="submit" value="onChange" />
+      {/* <input name="searchOnChange" type="submit" value="onChange" /> */}
     </form>
   );
 };

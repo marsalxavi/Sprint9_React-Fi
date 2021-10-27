@@ -5,18 +5,24 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Avatar from "@mui/material/Avatar";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationIcon from "@mui/icons-material/Notifications";
+import InfoIcon from "@mui/icons-material/Info";
 
 import * as Lib from "./Lib.jsx";
 import { VideoDetail } from "./VideoDetail.jsx";
 
 import "./Cap.css";
+import { height } from "@mui/system";
 
 const YouTubeLogo =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/512px-YouTube_Logo_2017.svg.png";
 
 export const Cap = () => {
-  const iniVideo = "https://www.youtube.com/embed/7kwdJhQemTo";
-  const [selectedVideo, setSelectedVideo] = useState(iniVideo);
+  const urlInitVideo = "https://www.youtube.com/embed/7kwdJhQemTo";
+  const [selectedVideo, setSelectedVideo] = useState({
+    url: urlInitVideo,
+    titol: "Titol Inici",
+    autor: "Descripcio Inici",
+  });
 
   const query0 = "Cibernarium";
   const [query, setQuery] = useState([query0]);
@@ -26,11 +32,17 @@ export const Cap = () => {
     const Llista = Lib.YtSearch(query, { setLlistaVideos });
   }, [query]);
 
-  const setterVideo = (videoID) => {
+  const setterVideo = (videoInfo) => {
+    console.log(videoInfo.dni);
     const urlYtEmbedBase = new URL("https://www.youtube.com/embed/");
-    const urlYtEmbedVideo = new URL(`${urlYtEmbedBase}${videoID}`);
-    setSelectedVideo(urlYtEmbedVideo);
+    const urlYtEmbedVideo = new URL(`${urlYtEmbedBase}${videoInfo.dni}`);
+    setSelectedVideo({
+      url: urlYtEmbedVideo,
+      titol: videoInfo.titol,
+      autor: videoInfo.autor,
+    });
   };
+  console.log("cap: ", selectedVideo);
 
   return (
     <div className="page">
@@ -41,16 +53,22 @@ export const Cap = () => {
           <Link to={{ pathname: "https://www.youtube.com" }} target="_blank">
             <img className="capLogo" src={YouTubeLogo} />
           </Link>
-          <h4>· x1tub</h4>
+          <h2>· x1tub</h2>
         </div>
         <div className="capInput">
           {/* <input type="text" /> */}
           <Lib.OnChange query={query} setQuery={setQuery} />
-          <SearchIcon className="lupa" />
+          <SearchIcon
+            style={{ width: "1.5em", height: "1.5em" }}
+            className="lupa"
+          />
         </div>
         <div className="capDreta">
           <NotificationIcon />
           <Avatar />
+          <Link to="/about">
+            <InfoIcon />
+          </Link>
         </div>
       </div>
 
@@ -58,8 +76,11 @@ export const Cap = () => {
       <div className="videoFrame">
         {/* ============ DETALL VIDEO ============ */}
         <div className="videoDetail">
-          <p>Detallllllll Video</p>
-          <VideoDetail urlVideo={selectedVideo} />
+          <VideoDetail
+            urlVideo={selectedVideo.url}
+            titolVideo={selectedVideo.titol}
+            autorVideo={selectedVideo.autor}
+          />
         </div>
         {/* ============ LLISTA VIDEOS: LATERAL ============ */}
         <div className="videoList">

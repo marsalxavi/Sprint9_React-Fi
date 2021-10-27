@@ -15,10 +15,6 @@ function App() {
     <Router>
       <div className='App'>
         {/* <Cap /> */}
-        <Link to="/" >x1tub</Link>
-        <Link to="/video/"> selectedVideo</Link>
-        <Link to={`/video/${srcVideo}`}> selectedVideo</Link>
-        <Link to="/about"> About</Link>
       </div>
       <Switch>
         <Route path="/about"> <About /> </Route>
