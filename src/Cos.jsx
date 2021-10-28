@@ -1,9 +1,28 @@
 import React from "react";
+import * as Lib from "./Lib.jsx";
+import { VideoDetail } from "./VideoDetail.jsx";
 
-export const Cos = () => {
+export const Cos = ({oSelectedVideo,oLlistaVideos,fSetterVideo}) => {
   return (
-    <div>
-      <p>Cos</p>
-    </div>
+    <>
+      {/* ============ SECCIO VIDEOS ============ */}
+      <div className="videoFrame">
+        {/* ============ DETALL VIDEO ============ */}
+        <div className="videoDetail">
+          <VideoDetail
+            urlVideo={oSelectedVideo.url}
+            cTitolVideo={oSelectedVideo.titol}
+            cAutorVideo={oSelectedVideo.autor}
+          />
+        </div>
+        {/* ============ LLISTA VIDEOS: LATERAL ============ */}
+        <div className="videoList">
+          <Lib.LinkList
+            oVideosPerLlistar={oLlistaVideos}
+            fClickedVideoID={fSetterVideo}
+          />
+        </div>
+      </div>
+    </>
   );
 };

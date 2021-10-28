@@ -5,23 +5,28 @@ import { Button } from "@mui/material";
 import './App.css'
 
 import { Cap } from './Cap.jsx';
-import { VideoDetail } from './VideoDetail.jsx'
+import { VideoFull } from './VideoFull.jsx'
 import { About } from './About/About.jsx';
 
 function App() {
+  let cQuery0 = "Cibernarium";
+  let cQuery, fSetQuery;
+
   const srcVideo = "https://www.youtube.com/embed/NT299zIk2JY";
 
   return (
-    <Router>
+
+    < Router >
+      {cQuery0} | {cQuery}
       <div className='App'>
         {/* <Cap /> */}
       </div>
       <Switch>
         <Route path="/about"> <About /> </Route>
-        <Route path="/video/:urlVideo"> <VideoDetail /> </Route>
+        <Route path="/video/:id/:title"> <VideoFull cTitolVideo="TITOL" /> </Route>
         <Route expath="/"> <Cap /> </Route>
       </Switch>
-    </Router>
+    </Router >
   );
 }
 

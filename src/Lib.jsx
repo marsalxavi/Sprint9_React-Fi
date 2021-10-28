@@ -9,14 +9,14 @@ import "./Lib.css";
 
 const ytsr = require("ytsr");
 
-export const YtSearch = async (qq, { setLlistaVideos }) => {
+export const YtSearch = async (qq, { fSetLlistaVideos }) => {
   const firstResultBatch = await ytsr(`${qq}`, { pages: 1 });
 
-  setLlistaVideos(firstResultBatch.items);
+  fSetLlistaVideos(firstResultBatch.items);
   return firstResultBatch;
 };
 
-export const LinkList = ({ VideosPerLlistar, clickedVideoID }) => {
+export const LinkList = ({ oVideosPerLlistar, fClickedVideoID }) => {
   const checkBestThumb = (item) => {
     if ("bestThumbnail" in item) {
       return true;
@@ -28,27 +28,27 @@ export const LinkList = ({ VideosPerLlistar, clickedVideoID }) => {
 
   return (
     <ol>
-      {VideosPerLlistar.map((item, index) => {
+      {oVideosPerLlistar.map((item, index) => {
         return (
           <>
             <li className="videoListLine">
               {checkBestThumb(item) && (
                 <div className="videoListItem">
                   <div className="videoListThumb">
-                    <img src={item.bestThumbnail.url} />
-                  </div>
-                  <div className="videoListDesc">
-                    <p
+                    <img
                       onClick={() => {
-                        clickedVideoID({
+                        fClickedVideoID({
                           dni: item.id,
                           titol: item.title,
-                          autor: item.author.name,
                         });
                       }}
-                    >
-                      {item.title}
-                    </p>
+                      src={item.bestThumbnail.url}
+                    />
+                  </div>
+                  <div className="videoListDesc">
+                    <Link to={`/video/${item.id}/${item.title}`}>
+                      <p>{item.title}</p>
+                    </Link>
 
                     {/* <Link to={`/video/${item.id}`}>{item.title}</Link> */}
                     {/* <a href={item.url}>{item.title}</a> */}
@@ -63,23 +63,23 @@ export const LinkList = ({ VideosPerLlistar, clickedVideoID }) => {
   );
 };
 
-export const OnChange = ({ query, setQuery }) => {
+export const OnChange = ({ cQuery, fSetQuery }) => {
   return (
     <form className="searchForm">
       <input
-        onChange={(e) => setQuery(e.target.value == "" ? " " : e.target.value)}
+        onChange={(e) => fSetQuery(e.target.value == "" ? " " : e.target.value)}
         name="nom"
         type="text"
-        value={query}
+        value={cQuery}
       />
       {/* <input name="searchOnChange" type="submit" value="onChange" /> */}
     </form>
   );
 };
 
-export const OnSubmit = ({ setQuery }) => {
+export const OnSubmit = ({ fSetQuery }) => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => setQuery(data.searchItem);
+  const onSubmit = (data) => fSetQuery(data.searchItem);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -87,7 +87,7 @@ export const OnSubmit = ({ setQuery }) => {
         name="nom"
         {...register("searchItem")}
         type="text"
-        // defaultValue={query0}
+        // defaultValue={cQuery0}
       />
       <input name="searchOnSubmit" type="submit" value="onSubmit" />
     </form>
