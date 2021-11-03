@@ -1,27 +1,24 @@
-import { ClassNames } from "@emotion/react";
-import { CodeSharp } from "@mui/icons-material";
-
-import React, { Fragment, useEffect, useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+
+import SearchIcon from "@mui/icons-material/Search";
 
 import "./Lib.css";
 
 const ytsr = require("ytsr");
 
-export const YtSearch = async (qq, { fSetLlistaVideos }) => {
+export const YtSearch = async (qq, { fSetYtsrVideos }) => {
   const firstResultBatch = await ytsr(`${qq}`, { pages: 1 });
-
-  fSetLlistaVideos(firstResultBatch.items);
+  fSetYtsrVideos(firstResultBatch.items);
   return firstResultBatch;
 };
 
-export const LinkList = ({ oVideosPerLlistar, fClickedVideoID }) => {
+export const ListYtsrVideos = ({ oVideosPerLlistar, fClickedVideoID }) => {
   const checkBestThumb = (item) => {
     if ("bestThumbnail" in item) {
       return true;
     } else {
-      // console.log("no bestThumbnail", item.title);
       return false;
     }
   };
@@ -30,33 +27,26 @@ export const LinkList = ({ oVideosPerLlistar, fClickedVideoID }) => {
     <ol>
       {oVideosPerLlistar.map((item, index) => {
         return (
-          <>
-            <li className="videoListLine">
-              {checkBestThumb(item) && (
-                <div className="videoListItem">
-                  <div className="videoListThumb">
-                    <img
-                      onClick={() => {
-                        fClickedVideoID({
-                          dni: item.id,
-                          titol: item.title,
-                        });
-                      }}
-                      src={item.bestThumbnail.url}
-                    />
-                  </div>
-                  <div className="videoListDesc">
-                    <Link to={`/video/${item.id}/${item.title}`}>
-                      <p>{item.title}</p>
-                    </Link>
-
-                    {/* <Link to={`/video/${item.id}`}>{item.title}</Link> */}
-                    {/* <a href={item.url}>{item.title}</a> */}
-                  </div>
+          <li key={index} className="videoListLine">
+            {checkBestThumb(item) && (
+              <div
+                className="videoListItem"
+                onClick={() => {
+                  fClickedVideoID({
+                    dni: item.id,
+                    titol: item.title,
+                  });
+                }}
+              >
+                <div className="videoListThumb">
+                  <img src={item.bestThumbnail.url} alt="" />
                 </div>
-              )}
-            </li>
-          </>
+                <div key={index} className="videoListDesc">
+                  <p>{item.title}</p>
+                </div>
+              </div>
+            )}
+          </li>
         );
       })}
     </ol>
@@ -67,7 +57,9 @@ export const OnChange = ({ cQuery, fSetQuery }) => {
   return (
     <form className="searchForm">
       <input
-        onChange={(e) => fSetQuery(e.target.value == "" ? " " : e.target.value)}
+        onChange={(e) =>
+          fSetQuery(e.target.value === "" ? " " : e.target.value)
+        }
         name="nom"
         type="text"
         value={cQuery}
@@ -82,14 +74,37 @@ export const OnSubmit = ({ fSetQuery }) => {
   const onSubmit = (data) => fSetQuery(data.searchItem);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="searchForm" onSubmit={handleSubmit(onSubmit)}>
       <input
         name="nom"
         {...register("searchItem")}
         type="text"
         // defaultValue={cQuery0}
       />
-      <input name="searchOnSubmit" type="submit" value="onSubmit" />
+      {/* <input name="searchOnSubmit" type="submit" value="onSubmit" /> */}
+    </form>
+  );
+};
+
+export const OnSubmit2 = ({ fSetQuery }) => {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => fSetQuery(data.searchItem);
+
+  return (
+    <form className="searchForm" onSubmit={handleSubmit(onSubmit)}>
+      <input
+        name="nom"
+        {...register("searchItem")}
+        type="text"
+        // defaultValue={cQuery0}
+      />
+      <Link onClick={handleSubmit(onSubmit)} to="/">
+        <SearchIcon
+          style={{ width: "1.5em", height: "1.5em" }}
+          className="lupa"
+        />
+      </Link>
+      {/* <input name="searchOnSubmit" type="submit" value="onSubmit" /> */}
     </form>
   );
 };

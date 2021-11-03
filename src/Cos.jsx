@@ -17,7 +17,7 @@ export const Cos = ({oSelectedVideo,oLlistaVideos,fSetterVideo}) => {
         </div>
         {/* ============ LLISTA VIDEOS: LATERAL ============ */}
         <div className="videoList">
-          <Lib.LinkList
+          <Lib.ListYtsrVideos
             oVideosPerLlistar={oLlistaVideos}
             fClickedVideoID={fSetterVideo}
           />

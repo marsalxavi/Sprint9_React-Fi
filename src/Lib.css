@@ -1,6 +1,11 @@
+.searchForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .searchForm > input {
-  /* display: flex; */
   /* flex: 1; */
-  font-size: 1.2em;
-  width: 20em;
+  font-size: 1.5em;
+  width: 30em;
 }

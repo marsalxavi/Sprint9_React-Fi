@@ -1,11 +1,8 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { useParams } from "react-router";
+import React from "react";
 
 import "./VideoDetail.css";
 
 export const VideoDetail = ({ urlVideo, cTitolVideo, cAutorVideo }) => {
-  //   const { urlVideo } = useParams();
-
   return (
     <div className="iframeVideo">
       <iframe
@@ -13,9 +10,9 @@ export const VideoDetail = ({ urlVideo, cTitolVideo, cAutorVideo }) => {
         // height="539"
         src={urlVideo}
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       ></iframe>
 
       <h2>Titol: {cTitolVideo}</h2>
