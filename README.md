@@ -6,7 +6,8 @@ A posteriori, s' afegiran funcionalitats específiques (p.e. reproducció en 2n 
 Oferir funcionalitats addicionals no incloses en a **YouTube/YouTube Music**.
 
 ## Estat del projecte
-- 4: [S9N01Ex05](#component-videoDetail)
+- 5: [S9N01Ex06: Web funcional amb llistat videos cercats (onSubmit) i detall del video escollit](#component-videoDetail)
+- 4: [S9N01Ex05](#component-videoItem)
 - 3: [S9N01Ex02-04: App, searchBar & videoList Components](#component-videoList)
 - 2: [S9N01Ex01: Base del Projecte (<initialCommit>)](#crear-la-base-del-projecte)
 - 1: [Fase Inicial: Planificació del projecte](#definició-de-la-arquitectura-de-la-aplicació)
