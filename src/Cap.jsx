@@ -18,8 +18,8 @@ export const Cap = () => {
   const urlInitVideo = "https://www.youtube.com/embed/7kwdJhQemTo";
   const [oYtsrSelecVideo, fSetYtsrSelecVideo] = useState({
     url: urlInitVideo,
-    titol: "Titol Inici",
-    autor: "Descripcio Inici",
+    titol: "Cibernàrium: formació tecnològica per a tothom des de fa 20 anys - Fes-te Ciber!",
+    autor: "Barcelona Activa",
   });
 
   const cQuery0 = "Cibernarium";
