@@ -16,7 +16,6 @@ export const Central = ({ oSelectedVideo }) => {
     <div className="Central">
       {/* >> Detall del Video seleccionat */}
       <div className="centralVideoDetail">
-        {/* <h2>Video Detail</h2> */}
         <VideoDetail
           urlVideo={oSelectedVideo.url}
           cTitolVideo={oSelectedVideo.titol}
@@ -26,7 +25,6 @@ export const Central = ({ oSelectedVideo }) => {
 
       {/* >> Llista Videos relacionats amb el seleccionat */}
       <div className="centralRelatedVideos">
-        <h3>Videos Relacionats</h3>
         <RelatedVideos />
       </div>
     </div>

@@ -1,0 +1,23 @@
+.relatedVideos {
+  /* max-width: 12rem; */
+  border: 8px solid yellow;
+}
+
+.relatedVideosRow {
+  display: flex;
+  flex-direction: row;
+  width: 5vw;
+  max-width: 1vw;
+}
+
+.relatedVideosItem {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem;
+  background-color: tomato;
+  color: white;
+}
+
+/* .relatedVideosThumb{} */
+
+/* .relatedVideosDesc{} */

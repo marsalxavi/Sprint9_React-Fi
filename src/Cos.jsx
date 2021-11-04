@@ -6,17 +6,15 @@ import { Dreta } from "./Dreta.jsx";
 
 import { VideoDetail } from "./VideoDetail.jsx";
 
-import './Cos.css'
+import "./Cos.css";
 
 /* ============ COS ============ */
-// >> ESQUERRA: Menu lateral 
-// >> CENTRAL: Frame 
+// >> ESQUERRA: Menu lateral
+// >> CENTRAL: Frame
 //    >> Detall del Video seleccionat
 //    >> Llista Videos relacionats amb el seleccionat
 // >> DRETA: Menu lateral Videos trobats
 // =====================================
-
-
 
 /* ============ COS ============ */
 export const Cos = ({ oSelectedVideo, oLlistaVideos, fSetterVideo }) => {
@@ -24,9 +22,8 @@ export const Cos = ({ oSelectedVideo, oLlistaVideos, fSetterVideo }) => {
 
   return (
     <div className="Cos">
-      
       {/* >> ESQUERRA Menu lateral */}
-{/*       <div className="cosEsquerra">
+      {/*       <div className="cosEsquerra">
         <Esquerra />
       </div>
  */}
@@ -39,7 +36,6 @@ export const Cos = ({ oSelectedVideo, oLlistaVideos, fSetterVideo }) => {
       <div className="cosDreta">
         <Dreta oLlistaVideos={oLlistaVideos} fSetterVideo={fSetterVideo} />
       </div>
-
     </div>
   );
 };
