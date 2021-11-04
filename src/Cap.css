@@ -1,27 +1,21 @@
-/* PAGINA */
-.page {
-  background-color: rgb(9, 36, 36);
-  display: flex;
-  flex-direction: column;
-}
-
 /* CAP */
-.cap {
+.Cap {
   height: 3em;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.2em;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: darkslategray;
 }
 .capEsquerra {
   display: flex;
   align-items: center;
   margin-left: 1em;
   color: white;
+}
+
+.capLogo {
+  height: 1em;
+  object-fit: contain;
+  margin-left: 1em;
 }
 
 .capInput {
@@ -35,77 +29,9 @@
   justify-content: center;
 }
 
-.lupa {
-  width: 150px;
-  border: 1px solid rgb(9, 36, 36);
-  background-color: lightgray;
-  color: navy;
-}
-
-.capLogo {
-  height: 1em;
-  object-fit: contain;
-  margin-left: 1em;
-}
-
 .capDreta {
   display: flex;
   align-items: center;
   object-fit: contain;
   margin-right: 1em;
-}
-
-/* ListYtsrVideos */
-.videoFrame {
-  display: flex;
-  flex-direction: row;
-  background-color: rgb(9, 36, 36);
-  color: white;
-  font-size: 1em;
-  font-weight: bold;
-  border: 1px solid rgb(9, 36, 36);
-  /* margin: 2em; */
-  padding: 1em;
-}
-.videoDetail {
-  background-color: rgb(9, 36, 36);
-  display: flex;
-  flex: 0.75;
-  border: 1px solid rgb(9, 36, 36);
-  /* margin: 2em; */
-  padding: 1em;
-}
-
-.videoList {
-  flex: 0.25;
-  border: 1px solid rgb(9, 36, 36);
-}
-
-.videoListLine {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.videoListThumb img {
-  height: 5em;
-}
-
-.videoListItem {
-  display: flex;
-  flex-direction: row;
-  align-items: top;
-}
-
-.videoListThumb {
-  /* background-color: rgb(58, 83, 20); */
-  padding: 0.1em;
-  margin: 0.1em; /* padding: 1em; */
-}
-
-.videoListDesc {
-  margin-left: 1em;
-  color: yellow;
-  text-decoration: underline;
-  /* text-align: left; */
 }

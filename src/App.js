@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import './App.css'
+// import './App.css'
 
-import { Cap } from './Cap.jsx';
+import { Main } from './Main.jsx';
 import { About } from './About/About.jsx';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     < Router >
       <Switch>
         <Route path="/about"> <About /> </Route>
-        <Route expath="/"> <Cap /> </Route>
+        <Route expath="/"> <Main /> </Route>
       </Switch>
     </Router >
   );

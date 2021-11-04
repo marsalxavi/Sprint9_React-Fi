@@ -1,0 +1,23 @@
+.Cos {
+  display: flex;
+  flex-direction: row;
+}
+
+.cosEsquerra {
+  flex: 0.0;
+}
+
+.cosCentral {
+  background-color: navy;
+  border: 8px solid red;
+  color: orange;
+  flex: 0.75;
+  max-height: 90vh;
+}
+
+.cosDreta {
+  background-color: green;
+  border: 6px solid yellow;
+  color: white;
+  flex: 0.25;
+}

@@ -1,28 +1,45 @@
 import React from "react";
-import * as Lib from "./Lib.jsx";
+
+import { Esquerra } from "./Esquerra.jsx";
+import { Central } from "./Central.jsx";
+import { Dreta } from "./Dreta.jsx";
+
 import { VideoDetail } from "./VideoDetail.jsx";
 
-export const Cos = ({oSelectedVideo,oLlistaVideos,fSetterVideo}) => {
+import './Cos.css'
+
+/* ============ COS ============ */
+// >> ESQUERRA: Menu lateral 
+// >> CENTRAL: Frame 
+//    >> Detall del Video seleccionat
+//    >> Llista Videos relacionats amb el seleccionat
+// >> DRETA: Menu lateral Videos trobats
+// =====================================
+
+
+
+/* ============ COS ============ */
+export const Cos = ({ oSelectedVideo, oLlistaVideos, fSetterVideo }) => {
+  // >> Frame Central
+
   return (
-    <>
-      {/* ============ SECCIO VIDEOS ============ */}
-      <div className="videoFrame">
-        {/* ============ DETALL VIDEO ============ */}
-        <div className="videoDetail">
-          <VideoDetail
-            urlVideo={oSelectedVideo.url}
-            cTitolVideo={oSelectedVideo.titol}
-            cAutorVideo={oSelectedVideo.autor}
-          />
-        </div>
-        {/* ============ LLISTA VIDEOS: LATERAL ============ */}
-        <div className="videoList">
-          <Lib.ListYtsrVideos
-            oVideosPerLlistar={oLlistaVideos}
-            fClickedVideoID={fSetterVideo}
-          />
-        </div>
+    <div className="Cos">
+      
+      {/* >> ESQUERRA Menu lateral */}
+{/*       <div className="cosEsquerra">
+        <Esquerra />
       </div>
-    </>
+ */}
+      {/* >> CENTRAL Frame */}
+      <div className="cosCentral">
+        <Central oSelectedVideo={oSelectedVideo} />
+      </div>
+
+      {/* >> DRETA: Menu lateral Videos trobats */}
+      <div className="cosDreta">
+        <Dreta oLlistaVideos={oLlistaVideos} fSetterVideo={fSetterVideo} />
+      </div>
+
+    </div>
   );
 };

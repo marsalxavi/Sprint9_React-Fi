@@ -1,0 +1,16 @@
+.Central {
+  display: flex;
+  flex-direction: column;
+  border: 8px solid black;
+  height: 100%;
+}
+
+.centralVideoDetail {
+  border: 4px dashed white;
+  height: 70%;
+}
+
+.centralRelatedVideos {
+  border: 4px dashed white;
+  height: 30%;
+}

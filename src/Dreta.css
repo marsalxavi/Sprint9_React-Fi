@@ -1,0 +1,40 @@
+/* ListYtsrVideos */
+
+/* 
+  videoList
+    > videoListLine
+      >> videoListItem
+        >>> videoListThumb
+        >>> videoListDesc
+
+ */
+
+.videoList {
+  border: 1px solid rgb(9, 36, 36);
+}
+
+.videoListLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.videoListItem {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+}
+
+.videoListThumb {
+  padding: 0.1em;
+}
+
+.videoListThumb img {
+  height: 5em;
+}
+
+.videoListDesc {
+  margin-left: 1em;
+  color: yellow;
+  text-decoration: underline;
+}
