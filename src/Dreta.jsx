@@ -1,5 +1,5 @@
 import React from "react";
-import { aRelatedVideos } from "./aRelatedVideos";
+// import { aRelatedVideos } from "./aRelatedVideos";
 
 import "./Dreta.css";
 
@@ -13,8 +13,6 @@ const ytdl = require("ytdl-core");
 /* ============ DRETA ============ */
 // >> DRETA: Menu lateral Videos trobats
 export const Dreta = ({ oLlistaVideos, fSetterVideo }) => {
-
-
   return (
     <div className="videoList">
       <ListYtsrVideos
@@ -27,7 +25,7 @@ export const Dreta = ({ oLlistaVideos, fSetterVideo }) => {
 
 // Llistem els videos trobats i recollim el clickat/escollit
 const ListYtsrVideos = ({ oVideosPerLlistar, fClickedVideoID }) => {
-  // Comprovem q existeix el Thumb. Sino, saltem al següent
+  // Comprovem q existeix el Thumb. Si no, saltem al següent
   const checkBestThumb = (item) => {
     if ("bestThumbnail" in item) {
       return true;
@@ -37,25 +35,16 @@ const ListYtsrVideos = ({ oVideosPerLlistar, fClickedVideoID }) => {
   };
 
   // =========== Related videos ============
-
   async function fGetYtDown(cSelectedVideo) {
-    console.log(cSelectedVideo);
     const oYtdlInfo = await YtDown(cSelectedVideo);
-    console.log(oYtdlInfo);
     return oYtdlInfo;
   }
-
   const YtDown = async (cSelectedVideo) => {
-    console.log(cSelectedVideo);
     const oYtdlInfo = await ytdl.getInfo(cSelectedVideo);
-    // fSetRelatedVideos(oYtdlInfo.related_videos);
-    console.log(oYtdlInfo);
-    console.log(oYtdlInfo.related_videos);
     return oYtdlInfo.related_videos;
   };
-
   // ^^^^^^^^^^^ Related videos ^^^^^^^^^^^
-  const suma = () => 3 + 3;
+
   return (
     <ol>
       {oVideosPerLlistar.map((item, index) => {
@@ -68,19 +57,14 @@ const ListYtsrVideos = ({ oVideosPerLlistar, fClickedVideoID }) => {
                   fClickedVideoID({
                     dni: item.id,
                     titol: item.author.name,
-                    // relVideos: aRelatedVideos,
-                    // relVideos: suma(),
                     relVideos: await fGetYtDown(item.id),
                   });
-                  console.log(item.id);
-                  // fGetYtDown(item.id);
-                  console.log(aRelatedVideos);
                 }}
               >
                 <div className="videoListThumb">
                   <img src={item.bestThumbnail.url} alt="" />
                 </div>
-                <div key={index} className="videoListDesc">
+                <div className="videoListDesc">
                   <p>{item.title}</p>
                 </div>
               </div>

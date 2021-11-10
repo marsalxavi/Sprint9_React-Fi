@@ -40,7 +40,6 @@ export const OnSubmit = ({ fSetQuery }) => {
         name="nom"
         {...register("searchItem")}
         type="text"
-        // defaultValue={cQuery0}
       />
       <Link onClick={handleSubmit(onSubmit)} to="/">
         <SearchIcon

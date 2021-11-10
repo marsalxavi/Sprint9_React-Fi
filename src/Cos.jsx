@@ -4,8 +4,6 @@ import { Esquerra } from "./Esquerra.jsx";
 import { Central } from "./Central.jsx";
 import { Dreta } from "./Dreta.jsx";
 
-import { VideoDetail } from "./VideoDetail.jsx";
-
 import "./Cos.css";
 
 /* ============ COS ============ */
@@ -17,7 +15,7 @@ import "./Cos.css";
 // =====================================
 
 /* ============ COS ============ */
-export const Cos = ({ oSelectedVideo, oLlistaVideos, fSetterVideo}) => {
+export const Cos = ({ oSelectedVideo, oLlistaVideos, fSetterVideo }) => {
   // >> Frame Central
 
   return (
@@ -29,21 +27,15 @@ export const Cos = ({ oSelectedVideo, oLlistaVideos, fSetterVideo}) => {
  */}
       {/* >> CENTRAL Frame */}
       <div className="cosCentral">
-        <Central
-          oSelectedVideo={oSelectedVideo}
-          // aRelatedVideos={aRelatedVideos}
-          // fSetRelatedVideos={fSetRelatedVideos}
-        />
-        {/* Passem video escollit */}
+        <Central oSelectedVideo={oSelectedVideo} />
       </div>
 
       {/* >> DRETA: Menu lateral Videos trobats */}
       <div className="cosDreta">
         <Dreta
-          oLlistaVideos={oLlistaVideos} //Passem llista videos trobats
-          fSetterVideo={fSetterVideo}
-        />{" "}
-        {/* Recollim el video clickat/escollit */}
+          oLlistaVideos={oLlistaVideos} /* Passem llista videos trobats */
+          fSetterVideo={fSetterVideo} /* Recollim video clickat/escollit */
+        />
       </div>
     </div>
   );

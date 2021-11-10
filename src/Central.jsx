@@ -10,10 +10,6 @@ import "./Central.css";
 // >> Llista Videos relacionats amb el seleccionat
 // =====================================
 
-const VideosRelacionats = ({ oSelectedVideo }) => {
-  console.log(oSelectedVideo.relVideos);
-};
-
 // ======== FRAME CENTRAL ========
 // Passem el video escollit
 export const Central = ({ oSelectedVideo }) => {
@@ -28,14 +24,7 @@ export const Central = ({ oSelectedVideo }) => {
 
       {/* >> Llista Videos relacionats amb el seleccionat */}
       <div className="centralRelatedVideos">
-
-        {/* <VideosRelacionats oSelectedVideo={oSelectedVideo} /> */}
-
-        {/* <RelatedVideos
-          cSelectedVideo="NT299zIk2JY"
-          fSetRelatedVideos={fSetRelatedVideos}
-        /> */}
-        {}
+        <RelatedVideos Related={oSelectedVideo.relVideos} />
       </div>
     </div>
   );
