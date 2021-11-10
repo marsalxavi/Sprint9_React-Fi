@@ -1,0 +1,141 @@
+digraph G {
+
+layout="dot";
+splines="polylines"; //curved, line, ortho, polylines
+
+subgraph cluster_Llegenda {
+    node [fontsize=10];
+    edge [fontsize=10];
+    component [shape=box label="COMPONENT\n(props)"];
+    function [shape=ellipse label="function\n(props)"];
+    
+    component -> function[label=<
+    <b>state</b><br/>
+    <u>fState</u><br/>
+    function
+    >];
+
+    function -> component
+    [color="blue" style="bold" fontcolor="blue" label="Return\nFunction"
+    ];
+}
+
+subgraph cluster_Main {
+
+    label="Main.jsx"
+    rankdir=TB;
+    node [shape=box] 
+        
+    main,cap,cos,peu;
+    About;
+
+    main [label="MAIN"]
+
+    main -> cap [label=<
+        <b>cQuery</b><br/>
+        <u>fSetQuery</u><br/>
+        >];
+    cap -> main 
+        [color="blue" style="bold" fontcolor="blue" label="fSetListYtsrVideos"
+    ];  
+
+    main -> cos [label=<<b>
+        oListYtsrVideos<br/>
+        oSelecVideoYtsrList
+        </b>>];
+    cos->main
+        [color="blue" style="bold" fontcolor="blue" label="fSetterVideo\nfSetterSelecVideoYtsrList)"
+    ];
+
+    main -> peu;
+
+    subgraph cluster_Lib {
+        label="Lib.jsx";
+        node [shape=ellipse]
+        YtSearch, OnSubmit, ytsr
+        
+        YtSearch [ label="Lib.YtSearch\n(qq, fSetListYtsrVideos)" ]
+        OnSubmit [label="OnSubmit\nf(SetQuery)"]
+
+        OnSubmit -> "input\nsearchIcon"
+    }
+    
+    subgraph cluster_Cap {
+        label="Cap.jsx";
+        node [shape=ellipse]
+        MenuIcon, fetchData
+
+        cap [label="CAP
+        (cQuery,fSetQuery,fSetListYtsrVideos)"]
+    }
+
+    subgraph cluster_Cos {
+        label="Cos,jsx"
+        esquerra,central,dreta;
+        cos [label="COS
+        (oSelectedVideo,oLlistaVideos,fSetterVideo)"]
+        
+        subgraph cluster_Esquerra {
+        }
+        
+        subgraph cluster_Central {
+            label="Central.jsx"
+            node [shape=record]
+            caixa [label="{VideoDetail|RelatedVideos}"];
+            central -> VideoDetail [label="oSelectedVideo"];
+            central -> RelatedVideos [label="..."];  
+        }
+
+        subgraph cluster_Dreta {
+            label="Dreta.jsx"
+            node [shape=ellipse]
+            ListYtsrVideos
+            
+            dreta -> ListYtsrVideos [label="oLlistaVideos\n(oVideosPerLlistar)"];
+            ListYtsrVideos -> dreta [color="blue" style="bold" fontcolor="blue" label="fSetterVideo\n(fClickedVideoID)"];
+        }  
+    }
+}
+
+    subgraph cluster_Peu {
+        peu [label="PEU\n(...)"];
+    }
+
+
+// lib
+    YtSearch -> fetchData
+        [color="blue" style="bold" fontcolor="blue" label="fSetListYtsrVideos"
+    ];
+
+    YtSearch -> ytsr [label="ytsr\n(`${qq}`, { pages: 1 })"];
+    ytsr -> YtSearch
+        [color="blue" style="bold" fontcolor="blue" label="fSetListYtsrVideos"
+    ];
+
+// cap
+    cap -> MenuIcon;
+    cap -> fetchData;
+    fetchData -> cap
+        [color="blue" style="bold" fontcolor="blue" label="fSetListYtsrVideos"
+    ];
+    cap -> OnSubmit;
+    cap -> About;
+
+    fetchData -> YtSearch [label=
+        <
+        <b>cQuery</b><br/>
+        fSetListYtsrVideos
+        >];
+
+// cos
+    cos -> esquerra;
+    cos -> central [label="oSelectedVideo"];
+    cos -> dreta [label="oLlistaVideos"];
+    dreta -> cos [color="blue" style="bold" fontcolor="blue" label="fSetterVideo"];
+
+// central
+
+
+// dreta
+
+}

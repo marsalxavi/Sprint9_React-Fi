@@ -17,7 +17,7 @@ import "./Cos.css";
 // =====================================
 
 /* ============ COS ============ */
-export const Cos = ({ oSelectedVideo, oLlistaVideos, fSetterVideo }) => {
+export const Cos = ({ oSelectedVideo, oLlistaVideos, fSetterVideo}) => {
   // >> Frame Central
 
   return (
@@ -29,12 +29,21 @@ export const Cos = ({ oSelectedVideo, oLlistaVideos, fSetterVideo }) => {
  */}
       {/* >> CENTRAL Frame */}
       <div className="cosCentral">
-        <Central oSelectedVideo={oSelectedVideo} />
+        <Central
+          oSelectedVideo={oSelectedVideo}
+          // aRelatedVideos={aRelatedVideos}
+          // fSetRelatedVideos={fSetRelatedVideos}
+        />
+        {/* Passem video escollit */}
       </div>
 
       {/* >> DRETA: Menu lateral Videos trobats */}
       <div className="cosDreta">
-        <Dreta oLlistaVideos={oLlistaVideos} fSetterVideo={fSetterVideo} />
+        <Dreta
+          oLlistaVideos={oLlistaVideos} //Passem llista videos trobats
+          fSetterVideo={fSetterVideo}
+        />{" "}
+        {/* Recollim el video clickat/escollit */}
       </div>
     </div>
   );

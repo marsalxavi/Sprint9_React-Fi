@@ -8,10 +8,10 @@ import "./Lib.css";
 
 const ytsr = require("ytsr");
 
-export const YtSearch = async (qq, { fSetYtsrVideos }) => {
+export const YtSearch = async (qq, { fSetListYtsrVideos }) => {
   const firstResultBatch = await ytsr(`${qq}`, { pages: 1 });
-  fSetYtsrVideos(firstResultBatch.items);
-  return firstResultBatch;
+  fSetListYtsrVideos(firstResultBatch.items);
+  // return firstResultBatch;
 };
 
 export const OnChange = ({ cQuery, fSetQuery }) => {
@@ -31,23 +31,6 @@ export const OnChange = ({ cQuery, fSetQuery }) => {
 };
 
 export const OnSubmit = ({ fSetQuery }) => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => fSetQuery(data.searchItem);
-
-  return (
-    <form className="searchForm" onSubmit={handleSubmit(onSubmit)}>
-      <input
-        name="nom"
-        {...register("searchItem")}
-        type="text"
-        // defaultValue={cQuery0}
-      />
-      {/* <input name="searchOnSubmit" type="submit" value="onSubmit" /> */}
-    </form>
-  );
-};
-
-export const OnSubmit2 = ({ fSetQuery }) => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => fSetQuery(data.searchItem);
 
