@@ -6,6 +6,7 @@ A posteriori, s' afegiran funcionalitats específiques (p.e. reproducció en 2n 
 Oferir funcionalitats addicionals no incloses en a **YouTube/YouTube Music**.
 
 ## Estat del projecte
+- 6: [S9N02Ex07 beta: Afegit llistat de videos relacionats. Millorant aspectes](#component-relatedvideos)
 - 5: [S9N01Ex06: Web funcional amb llistat videos cercats (onSubmit) i detall del video escollit](#component-videoDetail)
 - 4: [S9N01Ex05](#component-videoItem)
 - 3: [S9N01Ex02-04: App, searchBar & videoList Components](#component-videoList)
@@ -15,14 +16,15 @@ Oferir funcionalitats addicionals no incloses en a **YouTube/YouTube Music**.
 [![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://github.com/marsalxavi)
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://github.com/marsalxavi)
 
+## Flux de la Aplicació
+![Flux text](./src/Flow.dot.svg "Flux titol")
+
 ## Estil del codi
 Estil standar
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
  
 ## Captures de pantalla
-
-![link](x1tub/src/images/x1tub.png)
 
 ## Tecnologies/Framework
 
@@ -56,6 +58,9 @@ Funcionalitats addicionals no incloses en la web/app oficial
 #### Component VideoDetail
 - Mostra el detall del vídeo seleccionat
 ### Fase II
+#### Component RelatedVideos
+- Mostra els videos relacionats
+
 #### Funcionalitats addicionals
 - Videos recomanats
 - Historial de vídeos

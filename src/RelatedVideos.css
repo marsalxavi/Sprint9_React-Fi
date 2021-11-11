@@ -1,20 +1,16 @@
 .relatedVideos {
-  /* max-width: 12rem; */
-  border: 8px solid yellow;
+  border: 8px solid #282c34;
 }
 
 .relatedVideosRow {
   display: flex;
   flex-direction: row;
-  width: 5vw;
-  max-width: 1vw;
 }
 
 .relatedVideosItem {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 0.2rem;
-  background-color: tomato;
   color: white;
 }
 

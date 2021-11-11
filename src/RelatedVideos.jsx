@@ -5,12 +5,14 @@ export const RelatedVideos = ({ Related }) => {
     <>
       {Related.map((item, index) => {
         return (
-          <div key={index}>
-            <div className="videoListThumb">
-              <img src={item.thumbnails[0].url} alt="" />
-            </div>
-            <div className="videoListDesc">
-              <p>{item.title}</p>
+          <div className="RelatedVideosRow">
+            <div key={index} className="relatedVideosItem">
+              <div className="relatedVideosThumb">
+                <img src={item.thumbnails[0].url} alt="" />
+              </div>
+              <div className="relatedVideosDesc">
+                <p>{item.title}</p>
+              </div>
             </div>
           </div>
         );

@@ -8,16 +8,15 @@
 }
 
 .cosCentral {
-  background-color: navy;
-  border: 8px solid red;
+  border: 8px solid #282c34;
   color: orange;
   flex: 0.8;
   max-height: 90vh;
+  max-width: 80vw;
 }
 
 .cosDreta {
-  background-color: green;
-  border: 6px solid yellow;
+  border: 6px solid #282c34;
   color: white;
   flex: 0.2;
 }
